@@ -14,6 +14,7 @@ import CryptoAuth from "./Components/CryptoAuth";
 import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
 import Assets from "./Components/Assets/Assets";
 import Transfer from "./Components/Transfer/Transfer";
+import Create from "./Components/Create/Create";
 import Profile from "./Components/Profile/Profile";
 import Header from "./Components/Header";
 import NFTAssets from "./Components/NFT/NFTAssets";
@@ -58,7 +59,7 @@ function Home(): JSX.Element {
         component={RecentTransactions}
       /> */}
       <Tab.Screen
-        name="NFTAssets"
+        name="Feed"
         options={{
           tabBarLabel: "Feed",
           tabBarIcon: ({ color, focused }) => {
@@ -68,14 +69,14 @@ function Home(): JSX.Element {
         component={NFTAssets}
       />
       <Tab.Screen
-        name="Transfer"
+        name="Create"
         options={{
           tabBarLabel: "Create",
           tabBarIcon: ({ color }) => (
             <FontAwesomeIcon icon={faPlus} color={color} size={20} />
           ),
         }}
-        component={Transfer}
+        component={Create}
       />
 
       <Tab.Screen
@@ -101,12 +102,10 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
 
   switch (routeName) {
-    case "Assets":
-      return "Assets";
-    case "Transfer":
-      return "Transfer";
-    case "Transactions":
-      return "Transactions";
+    case "Feed":
+      return "Feed";
+    case "Create":
+      return "Create";
     case "Profile":
       return "Profile";
   }

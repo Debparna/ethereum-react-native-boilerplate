@@ -82,7 +82,7 @@ const NFTAssets = () => {
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.headerText} category="h4">
-        🦧 NFT Assets
+            {/* Feed */}
       </Text>
 
       {!isLoading && NFTBalance.length > 0 ? (
