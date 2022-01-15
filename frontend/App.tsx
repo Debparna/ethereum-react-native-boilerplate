@@ -20,11 +20,9 @@ import NFTAssets from "./Components/NFT/NFTAssets";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
-  faCreditCard,
-  faCoins,
+  faList,
+  faPlus,
   faUser,
-  faPaperPlane,
-  faRocket,
 } from "@fortawesome/free-solid-svg-icons";
 
 // import Moralis from "moralis/types";
@@ -39,7 +37,7 @@ function Home(): JSX.Element {
       activeColor="#315399"
       // inactiveColor="#3e2465"
       barStyle={{ backgroundColor: "white" }}>
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Assets"
         options={{
           tabBarLabel: "Assets",
@@ -58,13 +56,13 @@ function Home(): JSX.Element {
           ),
         }}
         component={RecentTransactions}
-      />
+      /> */}
       <Tab.Screen
         name="NFTAssets"
         options={{
-          tabBarLabel: "NFTAssets",
+          tabBarLabel: "Feed",
           tabBarIcon: ({ color, focused }) => {
-            return <FontAwesomeIcon icon={faRocket} color={color} size={20} />;
+            return <FontAwesomeIcon icon={faList} color={color} size={20} />;
           },
         }}
         component={NFTAssets}
@@ -72,9 +70,9 @@ function Home(): JSX.Element {
       <Tab.Screen
         name="Transfer"
         options={{
-          tabBarLabel: "Transfer",
+          tabBarLabel: "Create",
           tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faPaperPlane} color={color} size={20} />
+            <FontAwesomeIcon icon={faPlus} color={color} size={20} />
           ),
         }}
         component={Transfer}
