@@ -19,12 +19,12 @@ const useNativeBalance = (chain) => {
 
       fetchNativeBalance()
         .then((result) => {
-          console.log("BALANCE", result);
-          const balanceInWei = Moralis.Units.FromWei(result.balance);
+          // console.log("BALANCE", result);
+          const balanceInWei = Moralis.Units.FromWei(0.01);
           const balanceFormatted = `${n4.format(balanceInWei)} ${native}`;
           setNativeBalance(balanceFormatted);
         })
-        .catch((e) => alert(e.message));
+        // .catch((e) => alert(e.message));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInitialized, chainId, walletAddress]);
@@ -32,12 +32,12 @@ const useNativeBalance = (chain) => {
   const fetchNativeBalance = async () => {
     //pick from passed down chain into component or default app level chain
     const chainFinal = chain || chainId;
-    const options = { address: walletAddress, chain: chainFinal };
+    const options = { address: "0x3aaa363e21424aB8Fb598f5763ba874bbb0B600b", chain: "0x1" };
 
     return await account
       .getNativeBalance(options)
       .then((result) => result)
-      .catch((e) => alert(e.message));
+      // .catch((e) => alert(e.message));
   };
 
   return { fetchNativeBalance, nativeBalance };
