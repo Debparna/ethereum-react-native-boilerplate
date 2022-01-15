@@ -27,7 +27,7 @@ import {
   faRocket,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Moralis from "moralis/types";
+// import Moralis from "moralis/types";
 
 LogBox.ignoreAllLogs();
 
@@ -115,6 +115,7 @@ function getHeaderTitle(route) {
 }
 
 function App(): JSX.Element {
+
   const connector = useWalletConnect();
   const {
     authenticate,

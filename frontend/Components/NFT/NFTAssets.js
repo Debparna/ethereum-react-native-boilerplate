@@ -14,11 +14,16 @@ import { Divider, Card } from "@ui-kitten/components";
 import Animation from "../../splashLottie1.json";
 import LottieView from "lottie-react-native";
 import { getNativeByChain } from "../../helpers/networks";
+import {
+  REACT_APP_MORALIS_APPLICATION_ID,
+  REACT_APP_MORALIS_SERVER_URL,
+} from "@env";
 
 const NFTAssets = () => {
   const { NFTBalance, isLoading } = useNFTBalance();
   const { chainId } = useMoralisDapp();
   const { Moralis } = useMoralis();
+  Moralis.start({REACT_APP_MORALIS_SERVER_URL, REACT_APP_MORALIS_APPLICATION_ID});
   const Item = ({
     tokenAddress,
     image,

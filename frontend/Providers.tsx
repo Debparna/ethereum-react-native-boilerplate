@@ -33,6 +33,7 @@ const environment = "native";
 Moralis.setAsyncStorage(AsyncStorage);
 // Replace the enable function to use the react-native WalletConnect
 // @ts-ignore
+Moralis.start({REACT_APP_MORALIS_SERVER_URL, REACT_APP_MORALIS_APPLICATION_ID});
 Moralis.enable = enableViaWalletConnect;
 console.log(AsyncStorage.getAllKeys(), "KEYS");
 

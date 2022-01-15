@@ -6,6 +6,7 @@ import {
   useMoralis,
 } from "react-moralis";
 import { useIPFS } from "./useIPFS";
+// import { Moralis } from "moralis/types";
 
 export const useNFTBalance = (props) => {
   const { account } = useMoralisWeb3Api();
@@ -13,16 +14,19 @@ export const useNFTBalance = (props) => {
   const { isInitialized } = useMoralis();
   const { resolveLink } = useIPFS();
   const [NFTBalance, setNFTBalance] = useState([]);
+  // Moralis.start();
   const {
     fetch: getNFTBalance,
     data,
     error,
     isLoading,
   } = useMoralisWeb3ApiCall(account.getNFTs, {
-    chain: chainId,
+    chain: "0x1",
     address: walletAddress,
     ...props,
   });
+
+  console.log(error);
 
   useEffect(() => {
     if (isInitialized) {
