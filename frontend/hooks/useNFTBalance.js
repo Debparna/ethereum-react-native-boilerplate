@@ -14,7 +14,7 @@ export const useNFTBalance = (props) => {
   const { isInitialized } = useMoralis();
   const { resolveLink } = useIPFS();
   const [NFTBalance, setNFTBalance] = useState([]);
-  // Moralis.start();
+
   const {
     fetch: getNFTBalance,
     data,
